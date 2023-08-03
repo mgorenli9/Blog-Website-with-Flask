@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+
+{% block head %} 
+<style>
+.buttons{
+    text-align: right;   
+}
+
+</style>
+{% endblock %}
+
+{% block body %} 
+
+<div class="container pt-5">
+    <h1>BLOGS</h1>
+
+    <div class="buttons">
+        {% if not me %}
+        <a type="button" class="btn btn-primary" href="/login">Sign in</a>
+        <a type="button" class="btn btn-primary" href="/register">Sign up</a>
+        <a type="button" class="btn btn-primary" href="/create">Write</a>
+        {% else %}
+        <a type="button" class="btn btn-primary" href="/create">Write</a>
+        <a type="button" class="btn btn-primary" href="/login">Sign out</a>
+        {% endif %}
+    </div>
+
+    {% for c in contents %}
+    <div class="card">
+        <h5 class="card-header">{{ c.creator }}</h5>
+        <div class="card-body">
+          <h5 class="card-title">{{ c.content_title }}</h5>
+          <p class="card-text">{{ c.content_title }}</p>
+          <a href="#" class="btn btn-primary">Detail</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
