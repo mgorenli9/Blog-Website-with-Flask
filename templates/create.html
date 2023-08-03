@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+
+{% block head %} 
+<style>
+.btnTitle{
+    width: 400px;
+}
+.btnright{
+    text-align: center;
+}
+
+</style>
+{% endblock %}
+
+{% block body %} 
+<div class="container pt-5">
+    <div style="text-align: center; padding-top:45px;">   
+        <h1 > Write Your Blog! </h1>
+    
+        <div>
+            <form action="" method="POST">
+                <label for="email">Title</label> <br>
+                <input class="btnTitle" type="text" name = "blog_title"></input> <br>
+                <label for="password">Content</label><br>
+                <textarea type="text" name = "blog_content" cols = "100" rows = "6"></textarea> <br>
+                <input type="submit" class="btn btn-primary" value="Share"></input><br><br>
+                <a type="button" class="btn btn-primary" href="/">Home</a>
+            </form>
+        </div>
+        
+    </div>
+
+</div>
+
+{% endblock %}
